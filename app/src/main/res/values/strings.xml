@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Calorie Wheel</string>
+    <string name="widget_name">Calorie Wheel Widget</string>
+    <string name="settings_title">Settings</string>
+
+    <!-- Main Activity -->
+    <string name="current_calories">Current Calories</string>
+    <string name="daily_goal">Daily Goal</string>
+    <string name="calories_unit">cal</string>
+    <string name="tap_to_open_settings">Long press wheel for settings</string>
+
+    <!-- Settings -->
+    <string name="daily_goal_title">Daily Calorie Goal</string>
+    <string name="daily_goal_summary">Set your target calories per day</string>
+    <string name="increment_title">Wheel Increment</string>
+    <string name="increment_summary">Calories per notch on the wheel</string>
+    <string name="reset_title">Reset Calories</string>
+    <string name="reset_summary">Reset today\'s calories to 0</string>
+    <string name="reset_confirm">Reset calories to 0?</string>
+    <string name="reset_done">Calories reset to 0</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- Widget -->
+    <string name="widget_description">Track your daily calorie intake with a simple rotating wheel</string>
+    <string name="widget_tap_hint">Tap to open full app</string>
+</resources>

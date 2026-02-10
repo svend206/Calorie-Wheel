@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widgetRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_background"
+    android:padding="8dp">
+
+    <!-- Current calories display -->
+    <TextView
+        android:id="@+id/widgetCalories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/widgetCaloriesLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/widgetCalories"
+        android:layout_centerHorizontal="true"
+        android:text="@string/calories_unit"
+        android:textColor="@color/text_secondary"
+        android:textSize="16sp" />
+
+    <!-- Progress arc (simulated with a ProgressBar) -->
+    <ProgressBar
+        android:id="@+id/widgetProgress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:max="100"
+        android:progress="0"
+        android:progressDrawable="@drawable/progress_bar"
+        android:progressTint="@color/primary" />
+
+    <!-- Goal indicator -->
+    <TextView
+        android:id="@+id/widgetGoal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/widgetProgress"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/text_secondary"
+        android:textSize="12sp" />
+
+</RelativeLayout>
