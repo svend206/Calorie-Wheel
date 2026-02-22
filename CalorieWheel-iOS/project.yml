@@ -1,0 +1,66 @@
+name: CalorieWheel
+options:
+  bundleIdPrefix: com.iotbearings
+  deploymentTarget:
+    iOS: "16.0"
+  xcodeVersion: "15.0"
+  createIntermediateGroups: true
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    DEVELOPMENT_TEAM: ""
+    CODE_SIGN_IDENTITY: "Apple Development"
+    CODE_SIGN_STYLE: Automatic
+    ALWAYS_SEARCH_USER_PATHS: NO
+
+targets:
+  CalorieWheel:
+    type: application
+    platform: iOS
+    sources:
+      - CalorieWheel
+    settings:
+      base:
+        PRODUCT_NAME: CalorieWheel
+        INFOPLIST_GENERATION_MODE: GeneratedFile
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: "1"
+        PRODUCT_BUNDLE_IDENTIFIER: com.iotbearings.caloriewheel
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: "Calorie Wheel"
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+        INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: "UIInterfaceOrientationPortrait"
+        INFOPLIST_KEY_UIStatusBarStyle: UIStatusBarStyleLightContent
+        CODE_SIGN_ENTITLEMENTS: CalorieWheel/CalorieWheel.entitlements
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+    dependencies:
+      - target: CalorieWheelWidgetExtension
+
+  CalorieWheelWidgetExtension:
+    type: app-extension
+    platform: iOS
+    sources:
+      - CalorieWheelWidget
+    info:
+      path: CalorieWheelWidget/Info.plist
+      properties:
+        CFBundleDisplayName: "Calorie Widget"
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    settings:
+      base:
+        PRODUCT_NAME: CalorieWheelWidgetExtension
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: "1"
+        PRODUCT_BUNDLE_IDENTIFIER: com.iotbearings.caloriewheel.widget
+        GENERATE_INFOPLIST_FILE: NO
+        INFOPLIST_FILE: CalorieWheelWidget/Info.plist
+        CODE_SIGN_ENTITLEMENTS: CalorieWheelWidget/CalorieWheelWidget.entitlements
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks"

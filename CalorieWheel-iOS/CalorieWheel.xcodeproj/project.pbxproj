@@ -1,0 +1,402 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 63;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0B6F468512EFE235D32DAB75 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB009327F704CCA559B8E47 /* SettingsView.swift */; };
+		0C8A6C414C8E8F1023E1442F /* CalorieWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5432FD5DF2AE7E245D94631B /* CalorieWidgetBundle.swift */; };
+		2BF26950731ED419DD0FA870 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5938E1789106693C35395B51 /* Assets.xcassets */; };
+		2CEDFDE83E37C42C5284C1B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76543A40A0508FCC73C41BD3 /* Assets.xcassets */; };
+		3D96160DC235C28030D9898B /* CalorieWheelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB636123BB20FB1A2EA3925 /* CalorieWheelApp.swift */; };
+		68949729F8D825F07BDEB33E /* CalorieWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6395E3CDEE9289E3F64208F4 /* CalorieWidget.swift */; };
+		A05209334F7B8AF085AE9FAA /* CalorieDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A30C8045891F9EB9B9157 /* CalorieDataStore.swift */; };
+		C9E286715D0457013B2C61DB /* CalorieWheelUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F599A0D7FF54654C890725 /* CalorieWheelUIView.swift */; };
+		E5696157681C645F487A0A40 /* CalorieWheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1108CA969DD0EAE52FBDEB /* CalorieWheelView.swift */; };
+		EC5BDCF93B472F7B6FC70D01 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFB8B84E86D639B4C3C3231 /* ContentView.swift */; };
+		FE6F2500C9E5A12023AAEC01 /* CalorieWheelWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 6DF3E38CBA0823B4136EBDE7 /* CalorieWheelWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A11F6CFE06BCEFF3F287D4E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 603413265B4B65FC6745D254 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CDDFA9A0D4590C7E76BCD5AE;
+			remoteInfo = CalorieWheelWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A817C712BA1A6B59C46A5CFE /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FE6F2500C9E5A12023AAEC01 /* CalorieWheelWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2716EB25377F48EF88ABAD43 /* CalorieWheel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalorieWheel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CB636123BB20FB1A2EA3925 /* CalorieWheelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieWheelApp.swift; sourceTree = "<group>"; };
+		4E1108CA969DD0EAE52FBDEB /* CalorieWheelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieWheelView.swift; sourceTree = "<group>"; };
+		5432FD5DF2AE7E245D94631B /* CalorieWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieWidgetBundle.swift; sourceTree = "<group>"; };
+		570678CAA55710CF0A856E01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5938E1789106693C35395B51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6395E3CDEE9289E3F64208F4 /* CalorieWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieWidget.swift; sourceTree = "<group>"; };
+		69F599A0D7FF54654C890725 /* CalorieWheelUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieWheelUIView.swift; sourceTree = "<group>"; };
+		6DF3E38CBA0823B4136EBDE7 /* CalorieWheelWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CalorieWheelWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		76543A40A0508FCC73C41BD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		863A30C8045891F9EB9B9157 /* CalorieDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieDataStore.swift; sourceTree = "<group>"; };
+		ADB009327F704CCA559B8E47 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		B5F12054011188AC65D15E65 /* CalorieWheelWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CalorieWheelWidget.entitlements; sourceTree = "<group>"; };
+		DCFB8B84E86D639B4C3C3231 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E1F5A313B486B48C36EDACAB /* CalorieWheel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CalorieWheel.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		2B882A0CE115E44589D3B024 /* CalorieWheelWidget */ = {
+			isa = PBXGroup;
+			children = (
+				76543A40A0508FCC73C41BD3 /* Assets.xcassets */,
+				B5F12054011188AC65D15E65 /* CalorieWheelWidget.entitlements */,
+				6395E3CDEE9289E3F64208F4 /* CalorieWidget.swift */,
+				5432FD5DF2AE7E245D94631B /* CalorieWidgetBundle.swift */,
+				570678CAA55710CF0A856E01 /* Info.plist */,
+			);
+			path = CalorieWheelWidget;
+			sourceTree = "<group>";
+		};
+		3C21F402F1A4F2A6875A6A04 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				863A30C8045891F9EB9B9157 /* CalorieDataStore.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3E097D9268B594E6D4DEB7EF /* CalorieWheel */ = {
+			isa = PBXGroup;
+			children = (
+				5938E1789106693C35395B51 /* Assets.xcassets */,
+				E1F5A313B486B48C36EDACAB /* CalorieWheel.entitlements */,
+				3CB636123BB20FB1A2EA3925 /* CalorieWheelApp.swift */,
+				DCFB8B84E86D639B4C3C3231 /* ContentView.swift */,
+				3C21F402F1A4F2A6875A6A04 /* Models */,
+				9C938FEF6ACEA695D4080B62 /* Views */,
+			);
+			path = CalorieWheel;
+			sourceTree = "<group>";
+		};
+		9C938FEF6ACEA695D4080B62 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				69F599A0D7FF54654C890725 /* CalorieWheelUIView.swift */,
+				4E1108CA969DD0EAE52FBDEB /* CalorieWheelView.swift */,
+				ADB009327F704CCA559B8E47 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9FD25046E489B26CFFCE3449 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2716EB25377F48EF88ABAD43 /* CalorieWheel.app */,
+				6DF3E38CBA0823B4136EBDE7 /* CalorieWheelWidgetExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FE812DC5539531F09A683606 = {
+			isa = PBXGroup;
+			children = (
+				3E097D9268B594E6D4DEB7EF /* CalorieWheel */,
+				2B882A0CE115E44589D3B024 /* CalorieWheelWidget */,
+				9FD25046E489B26CFFCE3449 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CDDFA9A0D4590C7E76BCD5AE /* CalorieWheelWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3762E4E0D1FAC9E5CFE23BB /* Build configuration list for PBXNativeTarget "CalorieWheelWidgetExtension" */;
+			buildPhases = (
+				7A241CE596BD4564CD639117 /* Sources */,
+				E5F92F90BA7C5024F6C58144 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CalorieWheelWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = CalorieWheelWidgetExtension;
+			productReference = 6DF3E38CBA0823B4136EBDE7 /* CalorieWheelWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		F734C37E99192AFC20E1EE1B /* CalorieWheel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6EA7C3F525A5F13E9F6A2C95 /* Build configuration list for PBXNativeTarget "CalorieWheel" */;
+			buildPhases = (
+				D468745D39AE2000D0C66A88 /* Sources */,
+				D46A598730705C087BCC0605 /* Resources */,
+				A817C712BA1A6B59C46A5CFE /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				982D9B62004A063E64B52CBC /* PBXTargetDependency */,
+			);
+			name = CalorieWheel;
+			packageProductDependencies = (
+			);
+			productName = CalorieWheel;
+			productReference = 2716EB25377F48EF88ABAD43 /* CalorieWheel.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		603413265B4B65FC6745D254 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					CDDFA9A0D4590C7E76BCD5AE = {
+						ProvisioningStyle = Automatic;
+					};
+					F734C37E99192AFC20E1EE1B = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 3C08244C2B82BC1431A70B19 /* Build configuration list for PBXProject "CalorieWheel" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = FE812DC5539531F09A683606;
+			minimizedProjectReferenceProxies = 1;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F734C37E99192AFC20E1EE1B /* CalorieWheel */,
+				CDDFA9A0D4590C7E76BCD5AE /* CalorieWheelWidgetExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D46A598730705C087BCC0605 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BF26950731ED419DD0FA870 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5F92F90BA7C5024F6C58144 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CEDFDE83E37C42C5284C1B1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7A241CE596BD4564CD639117 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68949729F8D825F07BDEB33E /* CalorieWidget.swift in Sources */,
+				0C8A6C414C8E8F1023E1442F /* CalorieWidgetBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D468745D39AE2000D0C66A88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A05209334F7B8AF085AE9FAA /* CalorieDataStore.swift in Sources */,
+				3D96160DC235C28030D9898B /* CalorieWheelApp.swift in Sources */,
+				C9E286715D0457013B2C61DB /* CalorieWheelUIView.swift in Sources */,
+				E5696157681C645F487A0A40 /* CalorieWheelView.swift in Sources */,
+				EC5BDCF93B472F7B6FC70D01 /* ContentView.swift in Sources */,
+				0B6F468512EFE235D32DAB75 /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		982D9B62004A063E64B52CBC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CDDFA9A0D4590C7E76BCD5AE /* CalorieWheelWidgetExtension */;
+			targetProxy = A11F6CFE06BCEFF3F287D4E1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		001AA17709B86C5439DD50BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CalorieWheel/CalorieWheel.entitlements;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9XXAYJ7G93;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_GENERATION_MODE = GeneratedFile;
+				INFOPLIST_KEY_CFBundleDisplayName = "Calorie Wheel";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iotbearings.caloriewheel;
+				PRODUCT_NAME = CalorieWheel;
+			};
+			name = Debug;
+		};
+		19747D92BF962C4C008BB7A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CalorieWheel/CalorieWheel.entitlements;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9XXAYJ7G93;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_GENERATION_MODE = GeneratedFile;
+				INFOPLIST_KEY_CFBundleDisplayName = "Calorie Wheel";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iotbearings.caloriewheel;
+				PRODUCT_NAME = CalorieWheel;
+			};
+			name = Release;
+		};
+		54AAD7F867537B79FEAA4F51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		772B3BD02D9517EB30C9CE8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+		A1BB594E3E62FAA4A0F2488B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CalorieWheelWidget/CalorieWheelWidget.entitlements;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9XXAYJ7G93;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = CalorieWheelWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iotbearings.caloriewheel.widget;
+				PRODUCT_NAME = CalorieWheelWidgetExtension;
+			};
+			name = Release;
+		};
+		DC4AA93A626F6A530ACF48B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CalorieWheelWidget/CalorieWheelWidget.entitlements;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9XXAYJ7G93;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = CalorieWheelWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iotbearings.caloriewheel.widget;
+				PRODUCT_NAME = CalorieWheelWidgetExtension;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3C08244C2B82BC1431A70B19 /* Build configuration list for PBXProject "CalorieWheel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54AAD7F867537B79FEAA4F51 /* Debug */,
+				772B3BD02D9517EB30C9CE8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6EA7C3F525A5F13E9F6A2C95 /* Build configuration list for PBXNativeTarget "CalorieWheel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				001AA17709B86C5439DD50BA /* Debug */,
+				19747D92BF962C4C008BB7A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B3762E4E0D1FAC9E5CFE23BB /* Build configuration list for PBXNativeTarget "CalorieWheelWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC4AA93A626F6A530ACF48B6 /* Debug */,
+				A1BB594E3E62FAA4A0F2488B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 603413265B4B65FC6745D254 /* Project object */;
+}

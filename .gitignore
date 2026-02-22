@@ -42,3 +42,7 @@ Thumbs.db
 
 # Test output
 test_logic.py
+
+# Xcode user data
+xcuserdata/
+*.xcuserstate
