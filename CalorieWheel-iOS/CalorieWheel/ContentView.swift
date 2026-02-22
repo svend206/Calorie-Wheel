@@ -4,8 +4,19 @@ import WidgetKit
 struct ContentView: View {
     @StateObject private var dataStore = CalorieDataStore.shared
     @State private var showSettings = false
+    @State private var showHistory = false
 
     var body: some View {
+        ZStack {
+            if !dataStore.hasSeenOnboarding {
+                OnboardingView(dataStore: dataStore)
+            } else {
+                mainContent
+            }
+        }
+    }
+
+    private var mainContent: some View {
         ZStack {
             // Dark background
             Color(hex: 0x1A1A1A)
@@ -58,17 +69,41 @@ struct ContentView: View {
 
                 Spacer()
 
-                // Hint text
-                Text("Long press wheel for settings")
-                    .font(.caption)
-                    .foregroundStyle(Color(hex: 0xB0B0B0))
-                    .padding(.bottom, 32)
+                // History button — small, subtle
+                Button {
+                    showHistory = true
+                } label: {
+                    HStack(spacing: 6) {
+                        Image(systemName: "chevron.compact.up")
+                            .font(.caption)
+                        Text("History")
+                            .font(.caption)
+                    }
+                    .foregroundStyle(Color(hex: 0x666666))
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 8)
+                }
+                .padding(.bottom, 24)
             }
         }
         .preferredColorScheme(.dark)
         .sheet(isPresented: $showSettings) {
             SettingsView(dataStore: dataStore)
         }
+        .sheet(isPresented: $showHistory) {
+            HistoryView(dataStore: dataStore)
+                .presentationDetents([.medium, .large])
+                .presentationDragIndicator(.hidden)
+        }
+        .gesture(
+            DragGesture(minimumDistance: 30, coordinateSpace: .local)
+                .onEnded { value in
+                    // Swipe up to show history
+                    if value.translation.height < -50 && abs(value.translation.width) < abs(value.translation.height) {
+                        showHistory = true
+                    }
+                }
+        )
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
             // Check for 3am reset when app comes to foreground
             dataStore.checkAndResetIfNewDay()

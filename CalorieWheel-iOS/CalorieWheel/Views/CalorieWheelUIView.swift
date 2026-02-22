@@ -395,6 +395,9 @@ final class CalorieWheelUIView: UIView {
 
         updateCaloriesFromRotation()
         setNeedsDisplay()
+
+        // Medium haptic on snap confirmation
+        mediumHaptic.impactOccurred()
     }
 
     // MARK: - Refresh

@@ -17,6 +17,8 @@
 		C9E286715D0457013B2C61DB /* CalorieWheelUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F599A0D7FF54654C890725 /* CalorieWheelUIView.swift */; };
 		E5696157681C645F487A0A40 /* CalorieWheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1108CA969DD0EAE52FBDEB /* CalorieWheelView.swift */; };
 		EC5BDCF93B472F7B6FC70D01 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFB8B84E86D639B4C3C3231 /* ContentView.swift */; };
+		AA1B2C3D4E5F6A7B8C9D0E1F /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C3D4E5F6A7B8C9D0E1F2A /* HistoryView.swift */; };
+		CC3D4E5F6A7B8C9D0E1F2A3B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4E5F6A7B8C9D0E1F2A3B4C /* OnboardingView.swift */; };
 		FE6F2500C9E5A12023AAEC01 /* CalorieWheelWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 6DF3E38CBA0823B4136EBDE7 /* CalorieWheelWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -59,6 +61,8 @@
 		ADB009327F704CCA559B8E47 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B5F12054011188AC65D15E65 /* CalorieWheelWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CalorieWheelWidget.entitlements; sourceTree = "<group>"; };
 		DCFB8B84E86D639B4C3C3231 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BB2C3D4E5F6A7B8C9D0E1F2A /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		DD4E5F6A7B8C9D0E1F2A3B4C /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		E1F5A313B486B48C36EDACAB /* CalorieWheel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CalorieWheel.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,6 +105,8 @@
 			children = (
 				69F599A0D7FF54654C890725 /* CalorieWheelUIView.swift */,
 				4E1108CA969DD0EAE52FBDEB /* CalorieWheelView.swift */,
+				BB2C3D4E5F6A7B8C9D0E1F2A /* HistoryView.swift */,
+				DD4E5F6A7B8C9D0E1F2A3B4C /* OnboardingView.swift */,
 				ADB009327F704CCA559B8E47 /* SettingsView.swift */,
 			);
 			path = Views;
@@ -239,6 +245,8 @@
 				C9E286715D0457013B2C61DB /* CalorieWheelUIView.swift in Sources */,
 				E5696157681C645F487A0A40 /* CalorieWheelView.swift in Sources */,
 				EC5BDCF93B472F7B6FC70D01 /* ContentView.swift in Sources */,
+				AA1B2C3D4E5F6A7B8C9D0E1F /* HistoryView.swift in Sources */,
+				CC3D4E5F6A7B8C9D0E1F2A3B /* OnboardingView.swift in Sources */,
 				0B6F468512EFE235D32DAB75 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

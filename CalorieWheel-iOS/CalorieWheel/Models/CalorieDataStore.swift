@@ -1,6 +1,19 @@
 import Foundation
 import Combine
 
+/// A single day's calorie record for history tracking.
+struct DailyRecord: Identifiable, Codable {
+    let id: String          // date key, e.g. "2026-47"
+    let date: Date          // the actual calendar date
+    let calories: Int
+    let goal: Int
+
+    var percentage: Float {
+        guard goal > 0 else { return 0 }
+        return min(max(Float(calories) / Float(goal), 0), 1)
+    }
+}
+
 /// Handles all calorie data storage and retrieval using UserDefaults.
 /// Uses App Group for sharing data with the widget extension.
 final class CalorieDataStore: ObservableObject {
@@ -16,6 +29,8 @@ final class CalorieDataStore: ObservableObject {
         static let dailyGoal = "daily_goal"
         static let lastUpdateDate = "last_update_date"
         static let increment = "calorie_increment"
+        static let history = "calorie_history"
+        static let hasSeenOnboarding = "has_seen_onboarding"
     }
 
     static let defaultDailyGoal = 2400
@@ -30,6 +45,7 @@ final class CalorieDataStore: ObservableObject {
             }
             defaults.set(clamped, forKey: Keys.currentCalories)
             defaults.set(currentDateKey(), forKey: Keys.lastUpdateDate)
+            saveTodayToHistory()
         }
     }
 
@@ -44,6 +60,7 @@ final class CalorieDataStore: ObservableObject {
             if currentCalories > clamped {
                 currentCalories = clamped
             }
+            saveTodayToHistory()
         }
     }
 
@@ -55,6 +72,12 @@ final class CalorieDataStore: ObservableObject {
                 return
             }
             defaults.set(clamped, forKey: Keys.increment)
+        }
+    }
+
+    @Published var hasSeenOnboarding: Bool {
+        didSet {
+            defaults.set(hasSeenOnboarding, forKey: Keys.hasSeenOnboarding)
         }
     }
 
@@ -80,6 +103,8 @@ final class CalorieDataStore: ObservableObject {
         let storedCalories = storage.integer(forKey: Keys.currentCalories)
         self._currentCalories = Published(initialValue: min(max(storedCalories, 0), goal))
 
+        self._hasSeenOnboarding = Published(initialValue: storage.bool(forKey: Keys.hasSeenOnboarding))
+
         // Check for day boundary reset
         checkAndResetIfNewDay()
     }
@@ -96,6 +121,8 @@ final class CalorieDataStore: ObservableObject {
         let currentKey = currentDateKey()
 
         if let lastDate = lastUpdateDate, lastDate != currentKey {
+            // Save yesterday's final tally before resetting
+            saveHistoryRecord(dateKey: lastDate, calories: currentCalories, goal: dailyGoal)
             currentCalories = 0
             defaults.set(currentKey, forKey: Keys.lastUpdateDate)
         } else if lastUpdateDate == nil {
@@ -104,7 +131,7 @@ final class CalorieDataStore: ObservableObject {
     }
 
     /// Get a date key that changes at 3am instead of midnight.
-    private func currentDateKey() -> String {
+    func currentDateKey() -> String {
         var calendar = Calendar.current
         calendar.timeZone = TimeZone.current
         // Subtract 3 hours so the "day" starts at 3am
@@ -128,5 +155,85 @@ final class CalorieDataStore: ObservableObject {
     var percentage: Float {
         guard dailyGoal > 0 else { return 0 }
         return min(max(Float(currentCalories) / Float(dailyGoal), 0), 1)
+    }
+
+    // MARK: - History
+
+    /// Save today's current state to history.
+    private func saveTodayToHistory() {
+        let key = currentDateKey()
+        saveHistoryRecord(dateKey: key, calories: currentCalories, goal: dailyGoal)
+    }
+
+    /// Save a history record for a given date key.
+    private func saveHistoryRecord(dateKey: String, calories: Int, goal: Int) {
+        var history = loadHistoryDict()
+        history[dateKey] = ["calories": calories, "goal": goal]
+
+        // Keep only the last 90 days
+        if history.count > 90 {
+            let sorted = history.keys.sorted()
+            let toRemove = sorted.prefix(history.count - 90)
+            for key in toRemove {
+                history.removeValue(forKey: key)
+            }
+        }
+
+        defaults.set(history, forKey: Keys.history)
+    }
+
+    /// Load raw history dictionary from UserDefaults.
+    private func loadHistoryDict() -> [String: [String: Int]] {
+        defaults.dictionary(forKey: Keys.history) as? [String: [String: Int]] ?? [:]
+    }
+
+    /// Load history as sorted DailyRecord array (most recent first).
+    func loadHistory() -> [DailyRecord] {
+        let history = loadHistoryDict()
+        let calendar = Calendar.current
+
+        return history.compactMap { key, value in
+            guard let calories = value["calories"],
+                  let goal = value["goal"] else { return nil }
+
+            // Parse "YYYY-DDD" format back to a Date
+            let parts = key.split(separator: "-")
+            guard parts.count == 2,
+                  let year = Int(parts[0]),
+                  let dayOfYear = Int(parts[1]) else { return nil }
+
+            var comps = DateComponents()
+            comps.year = year
+            comps.day = dayOfYear
+            let date = calendar.date(from: comps) ?? Date()
+
+            return DailyRecord(id: key, date: date, calories: calories, goal: goal)
+        }
+        .sorted { $0.date > $1.date }
+    }
+
+    /// Load the last N days of history for the bar chart (oldest first).
+    func loadRecentHistory(days: Int) -> [DailyRecord] {
+        let all = loadHistory()
+        let todayKey = currentDateKey()
+
+        // Build the recent list including today
+        var recent = Array(all.prefix(days - 1))
+
+        // Add today as the first entry if not already present
+        if recent.first?.id != todayKey {
+            let todayRecord = DailyRecord(
+                id: todayKey,
+                date: Date(),
+                calories: currentCalories,
+                goal: dailyGoal
+            )
+            recent.insert(todayRecord, at: 0)
+            if recent.count > days {
+                recent = Array(recent.prefix(days))
+            }
+        }
+
+        return recent.reversed() // oldest first for chart
     }
 }
