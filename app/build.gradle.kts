@@ -1,18 +1,37 @@
+import java.io.FileInputStream
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
 }
 
+// Load the keystore properties from the local.properties file
+val keystorePropertiesFile = rootProject.file("local.properties")
+val keystoreProperties = Properties()
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(FileInputStream(keystorePropertiesFile))
+}
+
 android {
     namespace = "com.caloriewheel.app"
-    compileSdk = 34
+    compileSdk = 35
+
+    signingConfigs {
+        create("release") {
+            keyAlias = "my-key-alias"
+            keyPassword = keystoreProperties.getProperty("keyPassword", "YOUR_KEY_ALIAS_PASSWORD")
+            storeFile = file("../my-release-key.keystore")
+            storePassword = keystoreProperties.getProperty("storePassword", "YOUR_KEYSTORE_PASSWORD")
+        }
+    }
 
     defaultConfig {
         applicationId = "com.esacu.caloriewheel"
-        minSdk = 26
-        targetSdk = 34
-        versionCode = 2
-        versionName = "1.1"
+        minSdk = 23
+        targetSdk = 35
+        versionCode = 5
+        versionName = "1.1.1"
     }
 
     buildTypes {
@@ -22,6 +41,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("release")
         }
     }
     compileOptions {
